@@ -1,0 +1,30 @@
+# Copyright 2015 Volodymyr Medvid <vmedvid@riseup.net>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user=linux-sunxi tag=v${PV} ]
+
+export_exlib_phases src_prepare
+
+SUMMARY="Tools to help hacking Allwinner A10 devices"
+HOMEPAGE="http://linux-sunxi.org/"
+
+LICENCES="GPL-2"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-libs/libusb:1
+"
+
+DEFAULT_SRC_COMPILE_PARAMS=(
+    CROSS_COMPILE=$(exhost --tool-prefix)
+    CC=$(exhost --tool-prefix)cc
+)
+DEFAULT_SRC_INSTALL_PARAMS=(
+    PREFIX=/usr/$(exhost --target)
+)
+
+sunxi-tools_src_prepare() {
+    sed -e 's/pkg-config/$(PKG_CONFIG)/g' -i Makefile
+}
+
