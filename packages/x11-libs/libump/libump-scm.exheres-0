@@ -1,0 +1,15 @@
+# Copyright 2016 Volodymyr Medvid <vmedvid@riseup.net>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user=linux-sunxi ] \
+        autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.15 ] ]
+
+SUMMARY="Universal Memory Provider userspace library"
+
+LICENCES="Apache-2.0"
+SLOT="0"
+PLATFORMS="~armv7"
+MYOPTIONS=""
+
+DEPENDENCIES=""
+
