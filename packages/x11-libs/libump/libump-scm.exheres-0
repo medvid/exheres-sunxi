@@ -1,8 +1,9 @@
 # Copyright 2016 Volodymyr Medvid <vmedvid@riseup.net>
 # Distributed under the terms of the GNU General Public License v2
 
-require github [ user=linux-sunxi ] \
-        autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.15 ] ]
+require github [ user=linux-sunxi ]
+require autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.15 ] ]
+require udev-rules [ udev_files=[ debian/libump.udev ] ]
 
 SUMMARY="Universal Memory Provider userspace library"
 
@@ -12,4 +13,10 @@ PLATFORMS="~armv7"
 MYOPTIONS=""
 
 DEPENDENCIES=""
+
+src_install() {
+    default
+
+    install_udev_files
+}
 
