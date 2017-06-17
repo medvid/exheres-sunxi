@@ -1,0 +1,35 @@
+# Copyright 2017 Volodymyr Medvid <vmedvid@riseup.net>
+# Distributed under the terms of the GNU General Public License v2
+
+require xorg github [ user=ssvb ]
+
+SUMMARY="Xorg DDX driver for ARM devices (Allwinner, RPi and others)"
+DESCRIPTION="
+xf86-video-fbturbo is a video driver, primarily optimized for the devices powered
+by the Allwinner SoC (A10, A13, A20). It can use some of the 2D/3D hardware
+acceleration features.
+"
+
+LICENCES="MIT Allwinner"
+SLOT="0"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build:
+        x11-proto/fontsproto
+        x11-proto/randrproto
+        x11-proto/renderproto
+        x11-proto/videoproto
+        x11-proto/xf86driproto
+        x11-proto/xproto
+        x11-utils/util-macros[>=1.8]
+    build+run:
+        x11-dri/libdrm
+        x11-libs/libpciaccess[>=0.8.0]
+        x11-libs/libump
+        x11-libs/pixman
+        x11-server/xorg-server[>=1.0.99.901]
+"
+
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'pciaccess' )
+
