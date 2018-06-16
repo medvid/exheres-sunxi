@@ -1,0 +1,25 @@
+# Copyright 2018 Volodymyr Medvid <vmedvid@riseup.net>
+# Distributed under the terms of the GNU General Public License v2
+
+require autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.15 ] ]
+require github [ user=shadeslayer ]
+
+SUMMARY="Open-source X.org graphics driver for ARM graphics"
+DESCRIPTION="
+"
+
+LICENCES="MIT"
+SLOT="0"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build:
+        virtual/pkg-config
+        x11-proto/xorgproto
+        x11-utils/util-macros[>=1.4]
+    build+run:
+        x11-dri/libdrm
+        x11-libs/pixman
+        x11-server/xorg-server[>=1.10]
+"
+

@@ -1,0 +1,7 @@
+# Copyright 2018 Volodymyr Medvid <vmedvid@riseup.net>
+# Distributed under the terms of the GNU General Public License v2
+
+require xf86-video-armsoc
+
+PLATFORMS="~aarch64"
+
