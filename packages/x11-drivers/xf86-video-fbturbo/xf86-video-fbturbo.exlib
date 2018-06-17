@@ -1,7 +1,7 @@
 # Copyright 2017 Volodymyr Medvid <vmedvid@riseup.net>
 # Distributed under the terms of the GNU General Public License v2
 
-require xorg github [ user=ssvb ]
+require github [ user=ssvb ]
 
 SUMMARY="Xorg DDX driver for ARM devices (Allwinner, RPi and others)"
 DESCRIPTION="
@@ -16,6 +16,7 @@ MYOPTIONS=""
 
 DEPENDENCIES="
     build:
+        virtual/pkg-config
         x11-proto/xorgproto
         x11-utils/util-macros[>=1.8]
     build+run:
